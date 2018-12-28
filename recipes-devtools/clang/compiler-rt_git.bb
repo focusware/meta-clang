@@ -30,6 +30,7 @@ TARGET_CXXFLAGS_remove_toolchain-clang = " -stdlib=libc++ "
 TUNE_CCARGS_remove = "-no-integrated-as"
 
 DEPENDS += "ninja-native"
+DEPENDS_append_class-nativesdk = "clang-native"
 
 S = "${WORKDIR}/git"
 
