@@ -51,6 +51,11 @@ EXTRA_OECMAKE += "\
                   -G Ninja \
                   ${S} \
 "
+EXTRA_OECMAKE_append_class-target = "\
+                  -DCMAKE_AR=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}ar \
+                  -DCMAKE_NM=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}nm \
+                  -DCMAKE_RANLIB=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}ranlib \
+"
 
 EXTRA_OECMAKE_append_libc-musl = " -DLIBCXX_HAS_MUSL_LIBC=ON "
 

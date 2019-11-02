@@ -46,6 +46,11 @@ EXTRA_OECMAKE += "-DCOMPILER_RT_STANDALONE_BUILD=ON \
                   -DCOMPILER_RT_BUILD_XRAY=OFF \
                   -G Ninja \
 "
+EXTRA_OECMAKE_append_class-target = "\
+                  -DCMAKE_AR=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}ar \
+                  -DCMAKE_NM=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}nm \
+                  -DCMAKE_RANLIB=${STAGING_BINDIR_TOOLCHAIN}/${TARGET_PREFIX}ranlib \
+"
 
 EXTRA_OECMAKE_append_class-nativesdk = "\
                -DLLVM_TABLEGEN=${STAGING_BINDIR_NATIVE}/llvm-tblgen \
